@@ -7,11 +7,13 @@ RUN apt-get update && \
     apt-get install -y systemd && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN echo 'E68Ulsj0:E68Ulsj0' | chpasswd
+RUN echo 'root:root' | chpasswd
 # Expose the web-based terminal port
 EXPOSE 4200
 
 # Start shellinabox
 CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/:LOGIN"]
+
+
 
 
